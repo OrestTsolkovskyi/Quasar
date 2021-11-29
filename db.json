@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "City1",
+      "rating": "Good",
+      "image": "https://nafalinauki.pl/wp-content/uploads/2020/11/pexels-lukas-kloeppel-466685-1200x745.jpg"
+    },
+    {
+      "id": 2,
+      "name": "City2",
+      "rating": "Awesome",
+      "image": "https://cdn.vox-cdn.com/thumbor/uE7kUF_WX1YCXLXfD6l-wensGe8=/0x0:5110x3411/1200x800/filters:focal(2147x1298:2963x2114)/cdn.vox-cdn.com/uploads/chorus_image/image/60409101/shutterstock_251325649.0.jpg"
+    },
+    {
+      "id": 3,
+      "name": "City3",
+      "rating": "Cool",
+      "image": "https://techwireasia.com/wp-content/uploads/2017/05/shutterstock_348257096.jpg"
+    },
+    {
+      "id": 4,
+      "name": "City4",
+      "rating": "brilliant",
+      "image": "https://cdn.vox-cdn.com/thumbor/WtfpexOsRKRZI8p-UzymGNP_ixQ=/0x0:3000x2002/1200x800/filters:focal(1260x761:1740x1241)/cdn.vox-cdn.com/uploads/chorus_image/image/65566217/shutterstock_1148732384.0.jpg"
+    },
+    {
+      "id": 5,
+      "name": "City5",
+      "rating": "Wonderful",
+      "image": "https://pbs.twimg.com/media/EUcWE8BWAAc1aIB.jpg"
+    },
+    {
+      "id": 6,
+      "name": "City6",
+      "rating": "Amazing",
+      "image": "https://pbs.twimg.com/media/EDE8Qr8XkAAfGi8.jpg"
+    }
+  ]
+}
