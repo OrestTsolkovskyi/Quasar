@@ -1,81 +1,42 @@
 <template>
   <q-page class='catalog'>
-    <template v-if='products.length > 0'>
+    <template v-if='!userStore.getters.isLoggedIn'>
+      <Login/>
+      </template>
+      <template v-else>
       <Products
-        v-for='product in products'
-        :key='product.id'
-        :product_data='product'
+        :products='products'
       >
       </Products>
-    </template>
-
-    <q-card-section v-else>
-      <div class='text-h6' style='justify-self: center'>
-        No items now
-      </div>
-    </q-card-section>
+      </template>
   </q-page>
 </template>
 
 <script lang='ts'>
-
-import { defineComponent, ref } from 'vue';
+/* eslint-disable */
+import { onMounted, ref } from 'vue';
+import { defineComponent} from 'vue';
 import Products from 'components/Products.vue';
 import mockData from 'src/mockdata.json';
+import userStore from '../store/user'
+import Login from 'pages/Login.vue';
 
 export default defineComponent({
   name: 'PageIndex',
-  components: { Products },
-  data() {
+  components: { Login, Products },
+  setup() {
+    const products = ref(mockData)
+
+
+
+    onMounted(userStore.getUser)
+
     return {
-      todoTask: '',
-      /*     products: [
-             {
-               image: "1.jpg",
-               id: 1,
-               name: "City1",
-               rating: "Good",
-             },
-             {
-               image: "2.jpg",
-               id: 2,
-               name: "City2",
-               rating: "Awesome",
-             },
-             {
-               image: "3.jpg",
-               id: 3,
-               name: "City3",
-               rating: "Cool",
-             },
-             {
-               image: "4.jpg",
-               id: 4,
-               name: "City4",
-               rating: "brilliant",
-             },
-             {
-               image: "5.jpg",
-               id: 5,
-               name: "City5",
-               rating: "Wonderful",
-             },
-             {
-               image: "6.jpg",
-               id: 6,
-               name: "City6",
-               rating: "Amazing",
-             }
-           ]*/
-      products: mockData
-    };
+    userStore,
+      products,
+    }
   }
-  /* methods: {
-     removeItem(index: any){
-       this.products.splice(index, 1)
-     }
-   }*/
-});
+})
 </script>
 
 <style>

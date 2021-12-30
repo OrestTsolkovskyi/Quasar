@@ -1,0 +1,46 @@
+---
+openapi: 3.0.0
+info:
+  title: API for level 2 task
+  description: Initial API specification. To be refactored as a part of the task.
+  version: 0.0.1
+servers:
+- url: /api/level2
+  description: Prefix of the API endpoints  
+paths:
+  /test:
+    post:
+      summary: Test endpoint
+      operationId: test
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TestParams'
+        required: true
+      responses:
+        '200':
+          description: Confirms that the endpoint works
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TestResult'
+components:
+  schemas:
+    TestParams:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    TestResult:
+      required:
+      - message
+      - recipientName
+      type: object
+      properties:
+        message:
+          type: string
+        recipientName:
+          type: string  
